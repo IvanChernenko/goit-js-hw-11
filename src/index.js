@@ -51,7 +51,7 @@ async function fetchPictures(e) {
           image_type: "photo",
           orientation: "horizontal",
           safesearch: true,
-          per_page: 4,
+          per_page: 40,
           page: page,
         }
 
@@ -75,6 +75,8 @@ async function fetchPictures(e) {
       Notify.failure(`❌ Please enter existing entity `);
     } 
 }
+
+
 
 let gallery = new SimpleLightbox('.gallery .gallery__item', { fadeSpeed: 500, captionDelay: 250, captionsData: "alt", scrollZoom: true, });
 gallery.on('show.simplelightbox', fetchPictures);

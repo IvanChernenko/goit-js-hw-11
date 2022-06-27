@@ -10,7 +10,7 @@ refs.loadMoreBtn.addEventListener('click', loadMore);
 
 function loadMore(e) {
     totalHits = fetchData.totalHits;
-    const numberOfPages = Math.round(totalHits / 4);
+    const numberOfPages = Math.round(totalHits / 40);
     
     if (page <= numberOfPages) {
         fetchPictures(e);
