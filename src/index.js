@@ -26,8 +26,13 @@ let page = 1;
 
 refs.loadMoreBtn.style.display = "none";
 
-  refs.form.addEventListener('submit', fetchPictures);
-  refs.searchInput.addEventListener('input', onInput);
+refs.form.addEventListener('submit', resetPage);
+refs.searchInput.addEventListener('input', onInput);
+
+function resetPage(e) {
+  page = 1;
+  fetchPictures(e)
+}
 
   function onInput() {
     refs.gallery.innerHTML = "";
@@ -35,10 +40,11 @@ refs.loadMoreBtn.style.display = "none";
   }
 
 async function fetchPictures(e) {
-    e.preventDefault();
+  e.preventDefault();
+   
     if(refs.searchInput.value === "") {
       refs.gallery.innerHTML = "";
-      page = 1;
+     page = 1;
       refs.loadMoreBtn.style.display = "none";
       return;
     };

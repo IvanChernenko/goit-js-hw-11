@@ -29,7 +29,7 @@ export default class PhotoApiService {
                 return data.data;
              });
     }
-    async resetPage() { 
+    resetPage() { 
         this.page = 1;
     }
     get query(){
