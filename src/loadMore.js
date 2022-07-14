@@ -11,8 +11,6 @@ refs.loadMoreBtn.addEventListener('click', loadMore);
 function loadMore(e) {
     totalHits = fetchData.totalHits;
     const numberOfPages = Math.ceil(totalHits / 40);
-    console.log(page)
-    console.log(numberOfPages)
     if (page <= numberOfPages) {
         fetchPictures(e);
         console.log(page);
